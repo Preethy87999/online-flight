@@ -52,7 +52,7 @@ public class UserPageTest {
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("a[href='signup']")).click();
 		LoginPage signup = new LoginPage(driver);
-		signup.sendTextInSign("ram@gmail.com", "ram#123", "ram#123", "ram", "yyy", "chennai");
+		signup.sendTextInSign("preethy@gmail.com", "Pree#123", "Pree#123", "preethy", "yyy", "chennai");
 		Thread.sleep(2000);
 		signup.clickBtnReg();	
 	}
@@ -61,7 +61,7 @@ public class UserPageTest {
 		driver.findElement(By.cssSelector("body a:nth-child(3)")).click();
 		Thread.sleep(1000);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.sendTextInLogin("ramy@gmail.com", "ram#123");
+		loginPageObj.sendTextInLogin("preethy@gmail.com", "Pree#123");
 		Thread.sleep(1000);
 		loginPageObj.clickBtnLogin();
 		String expectedTitle = "Fly Away - Dashboard";
@@ -73,10 +73,10 @@ public class UserPageTest {
 	public void editProfilePage() throws InterruptedException {
 		driver.findElement(By.cssSelector("a[href='editprofile']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("input[name='pwd']")).sendKeys("ram23");
-		driver.findElement(By.cssSelector("input[name='pwd2']")).sendKeys("ram123");
+		driver.findElement(By.cssSelector("input[name='pwd']")).sendKeys("Preethy#4");
+		driver.findElement(By.cssSelector("input[name='pwd2']")).sendKeys("Preethy#4");
 		driver.findElement(By.cssSelector("input[name='name']")).clear();
-		driver.findElement(By.cssSelector("input[name='name']")).sendKeys("ramkumar");
+		driver.findElement(By.cssSelector("input[name='name']")).sendKeys("Pooja");
 		Thread.sleep(1000);
 		driver.findElement(By.tagName("button")).click();
 	}
