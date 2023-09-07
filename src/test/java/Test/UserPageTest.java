@@ -30,14 +30,14 @@ public class UserPageTest {
 
 	@BeforeTest
 	public void lunchBrowser() {
-		// System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 
-		// driver = new ChromeDriver();
-
-		// driver.manage().window().maximize();
-		 WebDriverManager.chromedriver().setup();
 		 driver = new ChromeDriver();
+
 		 driver.manage().window().maximize();
+		 // WebDriverManager.chromedriver().setup();
+		 // driver = new ChromeDriver();
+		 // driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -52,7 +52,7 @@ public class UserPageTest {
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("a[href='signup']")).click();
 		LoginPage signup = new LoginPage(driver);
-		signup.sendTextInSign("rahul@gmail.com", "rahul3", "rahul3", "rahul", "mmm", "chennai");
+		signup.sendTextInSign("preethy@gmail.com", "Pree#123", "Pree#123", "preethy", "yyy", "chennai");
 		Thread.sleep(2000);
 		signup.clickBtnReg();	
 	}
@@ -61,7 +61,7 @@ public class UserPageTest {
 		driver.findElement(By.cssSelector("body a:nth-child(3)")).click();
 		Thread.sleep(1000);
 		LoginPage loginPageObj = new LoginPage(driver);
-		loginPageObj.sendTextInLogin("rahul@gmail.com", "rahul3");
+		loginPageObj.sendTextInLogin("preethy@gmail.com", "Pree#123");
 		Thread.sleep(1000);
 		loginPageObj.clickBtnLogin();
 		String expectedTitle = "Fly Away - Dashboard";
@@ -73,10 +73,10 @@ public class UserPageTest {
 	public void editProfilePage() throws InterruptedException {
 		driver.findElement(By.cssSelector("a[href='editprofile']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("input[name='pwd']")).sendKeys("rahul5");
-		driver.findElement(By.cssSelector("input[name='pwd2']")).sendKeys("rahul5");
+		driver.findElement(By.cssSelector("input[name='pwd']")).sendKeys("preethi123");
+		driver.findElement(By.cssSelector("input[name='pwd2']")).sendKeys("preethi123");
 		driver.findElement(By.cssSelector("input[name='name']")).clear();
-		driver.findElement(By.cssSelector("input[name='name']")).sendKeys("rahulkumar");
+		driver.findElement(By.cssSelector("input[name='name']")).sendKeys("pooja");
 		Thread.sleep(1000);
 		driver.findElement(By.tagName("button")).click();
 	}
