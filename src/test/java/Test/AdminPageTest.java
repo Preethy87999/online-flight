@@ -40,14 +40,14 @@ public class AdminPageTest {
 	
 	@BeforeTest
 	public void lunchBrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "C:\\Users\\Lenovo\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 
-		driver = new ChromeDriver();
-
-		driver.manage().window().maximize();
-		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
+
 		// driver.manage().window().maximize();
+		 WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		 driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
